@@ -1,0 +1,79 @@
+.logoutContent {
+  padding: 40px 20px;
+}
+
+.logoutContent p {
+  color: #262626;
+  text-overflow: ellipsis;
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.6px;
+  margin-bottom: 28px;
+}
+
+.logoutImgWrapper {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-color: #fff4df;
+  padding: 18px;
+}
+
+.logoutContent div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logoutButtons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  width: 135px;
+  height: 42px;
+  border: none;
+  color: #262626;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.42px;
+}
+
+.logoutButtons .logoutYes {
+  background-color: #f6b83d;
+  color: #fff;
+}
+
+.logoutButtons .logoutCancel {
+  background-color: rgba(38, 38, 38, 0.05);
+}
+
+@media screen and (min-width: 768px) {
+  .logoutContent {
+    padding: 80px;
+  }
+
+  .logoutContent p {
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: -0.72px;
+  }
+
+  .logoutButtons button {
+    width: 140px;
+    height: 48px;
+    border: none;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.48px;
+  }
+}

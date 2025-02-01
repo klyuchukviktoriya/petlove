@@ -1,0 +1,59 @@
+.menuModal {
+  background-color: #fff;
+  position: relative;
+}
+
+.menuOverlay {
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: right;
+}
+.menuContent {
+  width: 218px;
+  background-color: #f6b83d;
+  padding: 236px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.homeMenuModal .menuContent {
+  background-color: #fff;
+}
+
+.menuCloseButton {
+  position: absolute;
+  top: 28px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 901;
+}
+
+.menuCloseIcon {
+  width: 32px;
+  height: 32px;
+  stroke: #fff;
+}
+
+.homeMenuModal .menuCloseIcon {
+  stroke: #262626;
+}
+
+@media screen and (min-width: 768px) {
+  .menuContent {
+    width: 374px;
+    padding: 369px 0 40px 0;
+  }
+}

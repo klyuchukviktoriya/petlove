@@ -1,0 +1,106 @@
+.home {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.homeInfo {
+  padding: 118px 20px 50px;
+  border-radius: 30px;
+  background-color: #f6b83d;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.homeTitle {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -1.5px;
+}
+
+.homeTitle span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.homeInfo p {
+  color: #fff;
+  letter-spacing: -0.28px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 402px;
+  background-image: url(/images/homeMob.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    max-width: 768px;
+    padding: 16px 32px;
+  }
+
+  .homeInfo {
+    padding: 178px 32px 44px;
+    gap: 32px;
+    width: 704px;
+  }
+
+  .homeTitle {
+    font-size: 80px;
+    letter-spacing: -2.4px;
+  }
+
+  .homeInfo p {
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.36px;
+    width: 255px;
+    margin-left: auto;
+  }
+
+  .imageWrapper {
+    height: 496px;
+    background-image: url(/images/homeTab.jpg);
+    width: 704px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .home {
+    max-width: 1280px;
+    padding: 16px 32px;
+  }
+
+  .homeInfo {
+    padding: 178px 64px 32px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1216px;
+    align-items: end;
+  }
+
+  .homeTitle {
+    max-width: 760px;
+    font-size: 90px;
+    letter-spacing: -2.7px;
+  }
+
+  .homeInfo p {
+    color: #fff;
+    letter-spacing: -0.28px;
+    max-width: 380px;
+  }
+
+  .imageWrapper {
+    width: 1216px;
+    height: 384px;
+    background-image: url(/images/home.jpg);
+  }
+}

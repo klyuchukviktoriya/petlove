@@ -1,0 +1,59 @@
+.headerMini {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 20px;
+  width: 334px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 888;
+}
+
+.headerMiniUserBar {
+  display: flex;
+}
+
+.logoutDis {
+  display: none;
+}
+
+.menuButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 901;
+  margin-left: 12px;
+}
+
+.menuIcon {
+  width: 32px;
+  height: 32px;
+  stroke: #262626;
+}
+
+.homeHeaderMini .menuIcon {
+  stroke: #fff;
+}
+
+.authDis {
+  display: none;
+}
+
+.homeHeaderMini .authDis {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .headerMini {
+    padding: 32px 32px;
+    width: 704px;
+  }
+
+  .authDis {
+    display: block;
+  }
+}

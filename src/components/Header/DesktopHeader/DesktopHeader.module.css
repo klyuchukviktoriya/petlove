@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 32px 32px;
+  width: 1216px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.authBar {
+  margin-left: auto;
+}
+
+.userBar {
+  display: flex;
+  margin-left: auto;
+  gap: 8px;
+}
+.homeHeader .logoutDis {
+  display: none;
+}

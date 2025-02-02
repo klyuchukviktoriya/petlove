@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 20px;
+  padding: 24px 20px;
   width: 334px;
   position: absolute;
   top: 0;
@@ -12,6 +12,7 @@
 
 .headerMiniUserBar {
   display: flex;
+  height: 40px;
 }
 
 .logoutDis {
@@ -51,6 +52,10 @@
   .headerMini {
     padding: 32px 32px;
     width: 704px;
+  }
+
+  .headerMiniUserBar {
+    height: 50px;
   }
 
   .authDis {

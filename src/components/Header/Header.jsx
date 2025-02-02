@@ -9,25 +9,27 @@ export default function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === "/home";
 
-  const [screenWidth, setScreenWidth] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+  const [isMiniHeader, setIsMiniHeader] = useState(false);
 
   useEffect(() => {
-    setScreenWidth(window.innerWidth);
-    const handleResize = () => setScreenWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    setIsClient(true);
+
+    const checkScreenSize = () => {
+      setIsMiniHeader(window.innerWidth < 1280);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  let HeaderComponent;
-  if (screenWidth < 1280) {
-    HeaderComponent = MiniHeader;
-  } else {
-    HeaderComponent = DesktopHeader;
-  }
+  if (!isClient) return null;
 
   return (
     <header className={`${css.header} ${isHomePage ? css.homeHeader : ""}`}>
-      <HeaderComponent />
+      {isMiniHeader ? <MiniHeader /> : <DesktopHeader />}
     </header>
   );
 }

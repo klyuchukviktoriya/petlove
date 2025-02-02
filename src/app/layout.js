@@ -1,7 +1,6 @@
 import { Manrope, Roboto } from "next/font/google";
 import "./globals.css";
 import { HeaderProvider } from "@/context/HeaderContext";
-import LoadingWrapper from "@/components/Loader/LoadingWrapper";
 import Header from "@/components/Header/Header";
 import ReduxProvider from "@/redux/ReduxProvider";
 import { ToastContainer } from "react-toastify";
@@ -36,10 +35,8 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <HeaderProvider>
             <Header />
-            <LoadingWrapper>
-              <ToastContainer autoClose={3000} />
-              {children}
-            </LoadingWrapper>
+            <ToastContainer autoClose={3000} />
+            {children}
           </HeaderProvider>
         </ReduxProvider>
       </body>

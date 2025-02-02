@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "@/redux/auth/operations";
 import { useRouter } from "next/navigation";
-import ModalApproveAction from "@/components/ModalApproveAction/ModalApproveAction";
 import css from "./LogOutBtn.module.css";
+import ModalApproveAction from "../Modals/ModalApproveAction/ModalApproveAction";
 
 export default function LogOutBtn({ onLogout }) {
   const dispatch = useDispatch();

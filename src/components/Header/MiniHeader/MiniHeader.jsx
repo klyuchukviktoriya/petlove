@@ -2,13 +2,12 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectIsAuthenticated } from "@/redux/auth/selectors";
-
 import { useHeaderContext } from "@/context/HeaderContext";
 import Logo from "@/components/Logo/Logo";
 import UserBar from "@/components/UserBar/UserBar";
 import LogOutBtn from "@/components/LogOutBtn/LogOutBtn";
 import AuthNav from "@/components/AuthNav/AuthNav";
-import MenuModal from "@/components/MenuModal/MenuModal";
+import MenuModal from "@/components/Modals/MenuModal/MenuModal";
 import { clsx } from "clsx";
 import css from "./MiniHeader.module.css";
 

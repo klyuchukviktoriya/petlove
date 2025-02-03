@@ -1,0 +1,47 @@
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.8px;
+}
+
+.homeLogo {
+  color: #fff;
+}
+
+.logoIcon {
+  width: 23px;
+  height: 23px;
+  fill: #f6b83d;
+  animation: pulse 1.5s infinite ease-in-out 1s;
+}
+
+.homeLogo .logoIcon {
+  fill: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    font-size: 28px;
+    letter-spacing: -1.12px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

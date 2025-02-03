@@ -27,6 +27,7 @@
     height: calc(100vh - 146px);
     gap: 16px;
     width: 704px;
+    align-items: start;
   }
 
   .loginImg {
@@ -37,7 +38,6 @@
 
 @media screen and (min-width: 1280px) {
   .login {
-    padding: 108px 0;
     width: 1216px;
   }
   .loginBlock {

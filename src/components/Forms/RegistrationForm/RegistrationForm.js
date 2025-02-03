@@ -7,15 +7,25 @@ import { useRouter } from "next/navigation";
 import { registerUser } from "@/redux/auth/operations";
 import { setUser } from "@/redux/auth/slice";
 import css from "./RegistrationForm.module.css";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import PasswordInput from "@/components/Forms/PasswordInput/PasswordInput";
+import InputField from "../InputField/InputField";
+import Title from "@/components/Title/Title";
+import Link from "next/link";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
-  email: yup.string().email("Invalid email").required("Email is required"),
+  email: yup
+    .string()
+    .matches(
+      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
+      "Invalid email format"
+    )
+    .required("Email is required"),
   password: yup
     .string()
     .min(7, "Password must be at least 7 characters")
-    .required(),
+    .required("Password is required"),
   confirmPassword: yup
     .string()
     .oneOf([yup.ref("password")], "Passwords must match")
@@ -30,6 +40,7 @@ export default function RegistrationForm() {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -58,26 +69,45 @@ export default function RegistrationForm() {
     }
   };
   return (
-    <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" {...register("name")} placeholder="Name" />
-      <p className={css.error}>{errors.name?.message}</p>
+    <div className={css.registerForm}>
+      <Title className={css.registerTitle}>Registration</Title>
+      <p className={css.registerText}>
+        Thank you for your interest in our platform.
+      </p>
+      <form onSubmit={handleSubmit(onSubmit)} className={css.registerInputs}>
+        <InputField
+          type="text"
+          placeholder="Name"
+          register={register("name")}
+          error={errors.name?.message}
+        />
+        <InputField
+          type="text"
+          placeholder="Email"
+          register={register("email")}
+          error={errors.email?.message}
+        />
 
-      <input type="email" {...register("email")} placeholder="Email" />
-      <p className={css.error}>{errors.email?.message}</p>
-
-      <input type="password" {...register("password")} placeholder="Password" />
-      <p className={css.error}>{errors.password?.message}</p>
-
-      <input
-        type="password"
-        {...register("confirmPassword")}
-        placeholder="Confirm Password"
-      />
-      <p className={css.error}>{errors.confirmPassword?.message}</p>
-
-      <button type="submit" className={css.submit}>
-        Registration
-      </button>
-    </form>
+        <PasswordInput
+          name="password"
+          register={register("password")}
+          error={errors.password?.message}
+          value={watch("password")}
+        />
+        <PasswordInput
+          name="confirmPassword"
+          register={register("confirmPassword")}
+          error={errors.confirmPassword?.message}
+          placeholder="Confirm password"
+        />
+        <button className={css.registerFormBtn} type="submit">
+          Registration
+        </button>
+      </form>
+      <p className={css.registerGoto}>
+        Already have an account? <Link href="/login">Login</Link>
+      </p>
+      <ToastContainer position="top-right" autoClose={3000} />
+    </div>
   );
 }

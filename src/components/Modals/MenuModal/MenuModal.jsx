@@ -1,9 +1,9 @@
 "use client";
 import { useEffect } from "react";
 import Modal from "react-modal";
-import Nav from "@/components/Nav/Nav";
+import Nav from "@/components/Header/Nav/Nav";
 import LogOutBtn from "@/components/LogOutBtn/LogOutBtn";
-import AuthNav from "@/components/AuthNav/AuthNav";
+import AuthNav from "@/components/Header/AuthNav/AuthNav";
 import css from "./MenuModal.module.css";
 import { useHeaderContext } from "@/context/HeaderContext";
 import { clsx } from "clsx";

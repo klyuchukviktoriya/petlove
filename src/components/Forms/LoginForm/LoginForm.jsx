@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import InputField from "../InputField/InputField";
-import PasswordInput from "@/components/PasswordInput/PasswordInput";
+import PasswordInput from "@/components/Forms/PasswordInput/PasswordInput";
 import css from "./LoginForm.module.css";
 import Title from "@/components/Title/Title";
 import Link from "next/link";

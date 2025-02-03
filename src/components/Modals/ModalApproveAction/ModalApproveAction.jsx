@@ -42,7 +42,7 @@ export default function ModalApproveAction({ onCancel, isOpen }) {
     <BaseModal isOpen={isOpen} onClose={onCancel}>
       <div className={css.logoutContent}>
         <div className={css.logoutImgWrapper}>
-          <Image width={44} height={44} src="/images/modalCat.png" alt="Cat" />
+          <Image width={44} height={44} src="/images/smallCat.png" alt="Cat" />
         </div>
         <p>Already leaving?</p>
         <div className={css.logoutButtons}>

@@ -56,3 +56,9 @@ img {
   overflow: hidden;
   height: 100vh;
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-password-reveal {
+  display: none;
+}

@@ -5,6 +5,13 @@ import * as yup from "yup";
 import { useDispatch } from "react-redux";
 import { login } from "@/redux/auth/operations";
 import { useRouter } from "next/navigation";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import InputField from "../InputField/InputField";
+import PasswordInput from "@/components/PasswordInput/PasswordInput";
+import css from "./LoginForm.module.css";
+import Title from "@/components/Title/Title";
+import Link from "next/link";
 
 const schema = yup.object().shape({
   email: yup
@@ -28,6 +35,7 @@ export default function LoginForm() {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -36,29 +44,46 @@ export default function LoginForm() {
     try {
       const result = await dispatch(login(data)).unwrap();
       if (result?.token) {
-        console.log("✅ Successful login:", result);
-
+        toast.success("✅ Successful login!");
         localStorage.setItem("token", result.token);
-
         router.push("/profile");
       } else {
-        console.error("⚠️ Incorrect API response", result);
+        toast.error("⚠️ Incorrect email or password!");
       }
     } catch (error) {
-      console.error("⛔ Login error:", error);
-      alert(error.message || "Login failed");
+      toast.error(error.message || "⛔ Login failed!");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="email" {...register("email")} placeholder="Email" />
-      <p>{errors.email?.message}</p>
+    <div className={css.loginForm}>
+      <Title className={css.loginTitle}>Log in</Title>
+      <p className={css.loginText}>
+        Welcome! Please enter your credentials to login to the platform:
+      </p>
+      <form onSubmit={handleSubmit(onSubmit)} className={css.loginInputs}>
+        <InputField
+          type="text"
+          placeholder="Email"
+          register={register("email")}
+          error={errors.email?.message}
+        />
 
-      <input type="password" {...register("password")} placeholder="Password" />
-      <p>{errors.password?.message}</p>
+        <PasswordInput
+          name="password"
+          register={register("password")}
+          error={errors.password?.message}
+          value={watch("password")}
+        />
 
-      <button type="submit">Log In</button>
-    </form>
+        <button className={css.loginFormBtn} type="submit">
+          Log In
+        </button>
+      </form>
+      <p className={css.loginGoto}>
+        Don’t have an account? <Link href="/register">Register</Link>
+      </p>
+      <ToastContainer position="top-right" autoClose={3000} />
+    </div>
   );
 }

@@ -1,0 +1,81 @@
+.petBlock {
+  border-radius: 30px;
+  width: 335px;
+  background-color: #f6b83d;
+  background-size: cover;
+}
+
+.petBlockInfo {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .petBlock {
+    width: 704px;
+    padding: 149px 32px;
+  }
+
+  .petBlockInfo {
+    width: 294px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .petBlockAvatar {
+    width: 60px;
+    height: 60px;
+    padding: 12px 14px 16px;
+    border-radius: 50%;
+    background-color: #fff4df;
+  }
+
+  .petBlockInfoRight {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .petBlockInfoTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .petBlockName {
+    color: #f6b83d;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.48px;
+  }
+
+  .petBlockBirthday {
+    color: rgba(38, 38, 38, 0.5);
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: -0.24px;
+  }
+
+  .petBlockBirthday span {
+    color: #262626;
+  }
+
+  .petBlockDescription {
+    color: rgba(38, 38, 38, 0.8);
+    width: 194px;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: -0.24px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .petBlock {
+    width: 592px;
+    height: 654px;
+    padding: 436px 61px 97px;
+  }
+}

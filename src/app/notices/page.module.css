@@ -1,21 +1,27 @@
-.news {
+.notices {
   max-width: 375px;
   margin: 0 auto;
   padding: 114px 20px 80px;
 }
-.newsTitle {
+.noticesTitle {
+  margin-bottom: 40px;
 }
-
 @media screen and (min-width: 768px) {
-  .news {
+  .notices {
     width: 768px;
     padding: 167px 32px 80px;
+  }
+  .noticesTitle {
+    margin-bottom: 44px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .news {
+  .notices {
     width: 1280px;
-    padding: 178px 64px 80px;
+    padding: 178px 32px 80px;
+  }
+  .noticesTitle {
+    margin-bottom: 40px;
   }
 }

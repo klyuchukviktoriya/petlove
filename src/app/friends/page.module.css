@@ -1,21 +1,27 @@
-.news {
+.friends {
   max-width: 375px;
   margin: 0 auto;
   padding: 114px 20px 80px;
 }
-.newsTitle {
+.friendsTitle {
+  margin-bottom: 40px;
 }
-
 @media screen and (min-width: 768px) {
-  .news {
-    width: 768px;
+  .friends {
+    max-width: 768px;
     padding: 167px 32px 80px;
+  }
+  .friendsTitle {
+    margin-bottom: 44px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .news {
-    width: 1280px;
+  .friends {
+    max-width: 1280px;
     padding: 178px 64px 80px;
+  }
+  .friendsTitle {
+    margin-bottom: 60px;
   }
 }

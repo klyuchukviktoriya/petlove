@@ -1,0 +1,20 @@
+.friendsList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 335px;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .friendsList {
+    width: 704px;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .friendsList {
+    width: 1153px;
+    gap: 28px 20px;
+  }
+}

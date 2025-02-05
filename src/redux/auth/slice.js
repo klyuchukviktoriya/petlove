@@ -4,7 +4,7 @@ import { fetchCurrentUser, login, logout, registerUser } from "./operations";
 const tokenFromStorage =
   typeof window !== "undefined" ? localStorage.getItem("token") : null;
 
-const slice = createSlice({
+const authSlice = createSlice({
   name: "auth",
   initialState: {
     user: null,
@@ -95,5 +95,5 @@ const slice = createSlice({
   },
 });
 
-export const { setUser } = slice.actions;
-export default slice.reducer;
+export const { setUser } = authSlice.actions;
+export default authSlice.reducer;

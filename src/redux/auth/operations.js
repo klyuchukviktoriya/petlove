@@ -1,22 +1,18 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { URL } from "@/constants/api";
 
-axios.defaults.baseURL = "https://petlove.b.goit.study/api";
+axios.defaults.baseURL = URL;
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-// const clearAuthHeader = () => {
-//   axios.defaults.headers.common.Authorization = "";
-// };
-
-// ✅ Логин
 export const login = createAsyncThunk(
   "auth/login",
   async (userData, thunkAPI) => {
     try {
-      const { data } = await axios.post("/users/signin", userData);
+      const { data } = await axios.post(`${URL}/users/signin`, userData);
       setAuthHeader(data.token);
       return data;
     } catch (error) {
@@ -29,7 +25,7 @@ export const registerUser = createAsyncThunk(
   "auth/register",
   async (userData, thunkAPI) => {
     try {
-      const { data } = await axios.post("/users/signup", userData);
+      const { data } = await axios.post(`${URL}/users/signup`, userData);
       setAuthHeader(data.token);
       return data;
     } catch (error) {
@@ -47,7 +43,7 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
 
     if (!token) return thunkAPI.rejectWithValue("No token available");
 
-    await axios.post("/users/signout", null, {
+    await axios.post(`${URL}/users/signout`, null, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -67,7 +63,7 @@ export const fetchCurrentUser = createAsyncThunk(
     if (!token) return thunkAPI.rejectWithValue("No token");
 
     try {
-      const { data } = await axios.get("/users/current", {
+      const { data } = await axios.get(`${URL}/users/current`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       return data;

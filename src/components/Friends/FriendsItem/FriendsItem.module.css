@@ -1,0 +1,109 @@
+.friendsItem {
+  width: 335px;
+  padding: 12px 12px 40px 20px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.friendsSchedule {
+  padding: 8px;
+  background-color: #fff4df;
+  border-radius: 30px;
+  color: #f6b83d;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: -0.24px;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.friendsLogoWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.friendsFlex {
+  display: flex;
+  gap: 14px;
+}
+
+.friendsTitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.64px;
+  margin-bottom: 14px;
+}
+
+.friendsContacts {
+  width: 209px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.friendsContact {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.friendsContact span {
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.friendsLink:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  text-decoration-color: #f6b83d;
+  text-underline-offset: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .friendsItem {
+    width: 342px;
+  }
+
+  .friendsSchedule {
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.28px;
+  }
+
+  .friendsLogoWrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .friendsFlex {
+    gap: 16px;
+  }
+
+  .friendsTitle {
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+    margin-bottom: 20px;
+  }
+
+  .friendsContacts {
+    width: 196px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .friendsItem {
+    width: 371px;
+  }
+
+  .friendsFlex {
+    gap: 20px;
+  }
+
+  .friendsContacts {
+    width: 229px;
+  }
+}

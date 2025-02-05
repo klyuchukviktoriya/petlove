@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+export const nextConfig = {
+  images: {
+    domains: ["ftp.goit.study"], // Добавляем домен
+  },
+};
 
 export default nextConfig;

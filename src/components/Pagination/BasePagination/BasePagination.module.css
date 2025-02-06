@@ -1,0 +1,99 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 335px;
+  margin: 0 auto;
+}
+
+.paginationButton {
+  border: 1px solid rgba(38, 38, 38, 0.2);
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.paginationButton:disabled {
+  border: 1px solid rgba(38, 38, 38, 0.05);
+}
+
+.paginationArrow {
+  fill: #262626;
+  width: 20px;
+  height: 20px;
+}
+
+.paginationButton:disabled .paginationArrow {
+  fill: rgba(38, 38, 38, 0.5);
+}
+
+.paginationBlock {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 700;
+}
+
+.paginationActive {
+  background-color: #f6b83d;
+  color: #fff;
+}
+
+.paginationDisabled {
+  cursor: not-allowed;
+}
+
+.paginationPage {
+  border: 1px solid rgba(38, 38, 38, 0.05);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.paginationBreak {
+  cursor: default;
+  border: 1px solid rgba(38, 38, 38, 0.05);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .pagination {
+    width: 400px;
+  }
+
+  .paginationButton {
+    width: 44px;
+    height: 44px;
+  }
+
+  .paginationArrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .paginationBlock {
+    gap: 10px;
+  }
+
+  .paginationPage {
+    width: 44px;
+    height: 44px;
+  }
+
+  .paginationBreak {
+    width: 44px;
+    height: 44px;
+  }
+}

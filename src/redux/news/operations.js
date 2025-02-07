@@ -7,7 +7,7 @@ export const fetchNews = createAsyncThunk(
   async ({ page = 1, perPage = 6, search = "" }, thunkAPI) => {
     try {
       const response = await axios.get(`${URL}/news`, {
-        params: { page, perPage, search },
+        params: { page, limit: perPage, keyword: search },
       });
       return response.data;
     } catch (error) {

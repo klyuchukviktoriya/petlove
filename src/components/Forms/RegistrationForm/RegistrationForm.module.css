@@ -57,7 +57,12 @@
   color: #f6b83d;
   font-weight: 700;
   letter-spacing: -0.36px;
+  cursor: pointer;
+}
+
+.registerGoto:hover a {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media screen and (min-width: 768px) {

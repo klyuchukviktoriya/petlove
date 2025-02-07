@@ -13,7 +13,7 @@ export default function BasePagination({
         onClick={() => handlePageChange({ selected: 0 })}
         className={css.paginationButton}
       >
-        <svg className={css.paginationArrow}>
+        <svg className={css.paginationArrowdouble}>
           <use href="/sprite.svg#double-left-arrow" />
         </svg>
       </button>
@@ -60,7 +60,7 @@ export default function BasePagination({
         onClick={() => handlePageChange({ selected: totalPages - 1 })}
         className={css.paginationButton}
       >
-        <svg className={css.paginationArrow}>
+        <svg className={css.paginationArrowdouble}>
           <use href="/sprite.svg#double-right-arrow" />
         </svg>
       </button>

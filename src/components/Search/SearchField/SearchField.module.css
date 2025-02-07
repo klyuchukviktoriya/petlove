@@ -1,8 +1,8 @@
-.inputWrapper {
+.searchField {
   position: relative;
 }
 
-.input {
+.searchFieldInput {
   width: 100%;
   padding: 12px;
   color: rgba(38, 38, 38, 0.8);
@@ -13,7 +13,7 @@
   border: 1px solid rgba(38, 38, 38, 0.15);
 }
 
-.input::placeholder {
+.searchFieldInput::placeholder {
   color: rgba(38, 38, 38, 0.5);
   font-family: Manrope;
   font-size: 14px;
@@ -23,57 +23,60 @@
   letter-spacing: -0.42px;
 }
 
-.error {
-  border: 1px solid #ef2447;
-}
-
-.errorIcon {
+.searchField button {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
   width: 18px;
   height: 18px;
-  position: absolute;
   top: 12px;
-  right: 12px;
-  z-index: 999;
-  fill: #ef2447;
-  stroke: #ef2447;
 }
 
-.errorText {
-  color: #ef2447;
-  font-family: Manrope;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.3px;
-  margin: 4px 12px;
+.searchFieldBtn {
+  right: 12px;
+}
+
+.searchFieldIcon {
+  width: 18px;
+  height: 18px;
+  stroke: #262626;
+  fill: transparent;
+}
+
+.searchFieldClearBtn {
+  right: 32px;
 }
 
 @media screen and (min-width: 768px) {
-  .input {
-    padding: 16px;
+  .searchField {
+    width: 230px;
+  }
+
+  .searchFieldInput {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.48px;
+  }
+
+  .searchFieldInput::placeholder {
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: -0.48px;
   }
 
-  .input::placeholder {
-    font-size: 16px;
-    line-height: 1.25;
-    letter-spacing: -0.48px;
+  .searchField button {
+    top: 16px;
   }
 
-  .errorIcon {
-    width: 22px;
-    height: 22px;
-    top: 15px;
-    right: 16px;
+  .searchFieldBtn {
+    right: 14px;
   }
 
-  .errorText {
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: -0.36px;
-    margin: 4px 16px;
+  .searchFieldClearBtn {
+    right: 35px;
   }
 }

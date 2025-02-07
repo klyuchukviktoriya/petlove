@@ -28,7 +28,17 @@
   height: 20px;
 }
 
+.paginationArrowdouble {
+  fill: #262626;
+  width: 32px;
+  height: 32px;
+}
+
 .paginationButton:disabled .paginationArrow {
+  fill: rgba(38, 38, 38, 0.5);
+}
+
+.paginationButton:disabled .paginationArrowdouble {
   fill: rgba(38, 38, 38, 0.5);
 }
 
@@ -56,6 +66,7 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
+  font-weight: 700;
 }
 
 .paginationBreak {
@@ -83,6 +94,12 @@
     height: 24px;
   }
 
+  .paginationArrowdouble {
+    fill: #262626;
+    width: 32px;
+    height: 32px;
+  }
+
   .paginationBlock {
     gap: 10px;
   }
@@ -90,6 +107,8 @@
   .paginationPage {
     width: 44px;
     height: 44px;
+    font-size: 18px;
+    line-height: 1.22;
   }
 
   .paginationBreak {

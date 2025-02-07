@@ -1,0 +1,21 @@
+.newsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 44px;
+  width: 335px;
+}
+
+@media screen and (min-width: 768px) {
+  .newsList {
+    width: 704px;
+    gap: 32px 24px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .newsList {
+    width: 1153px;
+    gap: 40px 35px;
+  }
+}
